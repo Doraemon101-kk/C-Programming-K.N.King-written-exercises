@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <string.h>
+
+void get_extension(const char*file_name, char*extension){
+	int len = strlen(file_name);
+	
+	int i;
+    for (i = len - 1; i >= 0; i--) {
+        if (file_name[i] == '.') {
+            strcpy(extension, file_name + i + 1);
+            return;
+        }
+    }
+    extension[0] = '\0';
+}
